@@ -73,10 +73,12 @@ The next step was to place the three ec2's behind an elastic load balancer. This
 ![tg2](./images/tg-2.png)
 
 ### Step 4
-The final step was to attach our application load balancer to our custom domain name.
+The final step was to attach our application load balancer to our custom domain name usung aws route 53.
 
 A hosted zone was created with the custom domain name and a record was created including the sub domain name`terraform-test` and attaching it to the alb using the alb `zone_id` and `dns_name`
 
+Since the domain name was transferred to AWS, I had to input the name servers in my route 53 hosted zone
+to the service provider where I purchased the domain name.
 
 # PROCESS OF DEPLOYING TERRAFORM PROJECT
 To deploy this terraform project, you need to have Terraform installed on your machine. The assumption is that we are deploying to development; so we right click on the dev folder and open with an IDE and input the commands below.
