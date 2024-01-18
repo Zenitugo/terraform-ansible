@@ -15,4 +15,4 @@ This is a two-fold task.
 *NOTE:* Your project is complete when one visits terraform-test.yoursdmain.com and it shows the content from your instances while rotating between the servers as you refresh to display their unique content.
 
 
-Check here for a breakdown of the solution: [solution](https://github.com/Zenitugo/terraform-ansible/blob/master/documentation.md)
+Check here for a breakdown of the solution: [Documentation.md](https://github.com/Zenitugo/terraform-ansible/blob/master/documentation.md)
