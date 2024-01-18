@@ -12,7 +12,7 @@ This is a two-fold task.
 - Create an Ansible script that uses the host-inventory file Terraform created to install Apache, set the timezone to Africa/Lagos, and display a simple HTML page containing content to identify all 3 EC2 instances.
 
 
-*NOTE:* Your project is complete when one visits terraform-test.yoursdmain.com and it shows the content from your instances while rotating between the servers as you refresh to display their unique content.
+*NOTE:* Your project is complete when one visits terraform-test.yoursdomain.com and it shows the content from your instances while rotating between the servers as you refresh to display their unique content.
 
 
 Check here for a breakdown of the solution: [Documentation.md](https://github.com/Zenitugo/terraform-ansible/blob/master/documentation.md)
