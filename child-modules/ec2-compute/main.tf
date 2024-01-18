@@ -90,6 +90,11 @@ resource "local_file" "output_file" {
   filename = "${path.module}/local_directory/host-inventory.ini"
 }
 
+
+########################################################################################################################################
+######################################################################################################################################
+
+# Create a resource block to export public and private keys that will be used in the linux terminal and ansible controller to provision the three ec2s
 resource "local_file" "key" {
   content =   tls_private_key.ssh_key.private_key_pem
   filename = "${path.module}/local_directory/key-pair.pem" 
