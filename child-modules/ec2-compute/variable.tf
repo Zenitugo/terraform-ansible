@@ -1,0 +1,11 @@
+variable "ami" {}
+variable "instance_type" {}
+variable "environment" {}
+variable "key_name" {}
+variable "key_filename" {}
+variable "vpc_id" {}
+variable "security-block" {}
+variable "public_subnet_id-a" {}
+variable "public_subnet_id-b" {}
+variable "public_subnet_id-c" {}
+variable "alb-sg-id" {}

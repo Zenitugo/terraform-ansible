@@ -1,0 +1,45 @@
+---
+- name: Display an html page using apache server
+  hosts: all 
+  become: true
+  tasks:
+  # Update apt packages
+    - name: update cache
+      ansible.builtin.apt:
+        update_cache: yes
+        state: latest
+      
+
+   # Set the timezone to Africa/Lagos
+    - name: Set the timezone to Africa/Lagos
+      shell:
+        timedatectl set-timezone Africa/Lagos
+    
+   # Display the timezone in the template file
+    - name: Send the timezone to html file
+      shell:
+        timedatectl >> "/home/ubuntu/index.html.j2"
+
+  # Install Apache 2
+    - name: "Installing Apache2"
+      ansible.builtin.apt:
+        pkg:
+          - apache2-bin
+          - apache2
+        state: present           
+  
+  # Copy the custom web page to the document root
+    - name: Copy using inline content
+      ansible.builtin.copy:
+        src: "/home/ubuntu/index.html.j2"
+        dest: "/var/www/html/index.html"
+        remote_src: yes
+  
+  # Restart Apache2 configurations
+    - name: restart Apache
+      ansible.builtin.service:
+        name: apache2
+        enabled: yes
+        state: restarted
+
+ 
